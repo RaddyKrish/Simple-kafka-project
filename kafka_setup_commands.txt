@@ -1,0 +1,37 @@
+
+Download kafka from  https://kafka.apache.org/quickstart
+
+Then un-tar it through cmd prompt.
+
+> tar -xzf kafka_2.12-2.5.0.tgz
+> cd kafka_2.12-2.5.0
+
+
+1)Open a cmd propmt in windows and navigate to install dir (cd  C:\kafka\kafka_2.12-2.5.0\bin\windows)
+2)zookeeper-server-start.bat C:\kafka\kafka_2.12-2.5.0\config\zookeeper.properties
+3)In another cmd prompt navigate to install dir and run, kafka-server-start.bat C:\kafka\kafka_2.12-2.5.0\config\server.properties
+4) As mentioned in step 6 in https://kafka.apache.org/quickstart, create another server properties and modify the mentioned propertis to avoid conclict and start another version of 
+5)In another cmd prompt navigate to install dir and run, kafka-server-start.bat C:\kafka\kafka_2.12-2.5.0\config\server_1.properties
+6)In another cmd prompt navigate to install dir and run, kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 2 --partitions 1 --topic secondtopic
+
+
+The topic name in step 6 could be set to topic of your choice, i had it as: secondtopic
+
+Your server side setup is complete
+
+
+
+Other useful commends for test:
+
+kafka-console-producer.bat --bootstrap-server localhost:9092 --topic kafkatopic1
+
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic kafkatopic1 --from-beginning
+
+kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic secondtopic
+
+
+
+
+
+
