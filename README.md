@@ -1,5 +1,5 @@
 # Simple-kafka-project
- A bare-bone kafka producer and consumer application using SpringBoot
+ A bare-bone kafka producer and consumer application using SpringBoot that could be run locally
 
 Reference: https://kafka.apache.org/quickstart
 
